@@ -37,6 +37,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * ex) タグ名一括取得
+     * $user->tags()->pluck('name')
+     * $user->tags->each(function($v))
+     *
+     * @return void
+     */
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
